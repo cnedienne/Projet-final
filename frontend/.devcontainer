@@ -1,0 +1,11 @@
+{
+  "name": "React in Docker",
+  "context": "..",
+  "dockerFile": "../Dockerfile", 
+  "workspaceFolder": "/app",
+  "mounts": ["source=${localWorkspaceFolder},target=/app,type=bind"],
+  "forwardPorts": [5173],
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  }
+}

@@ -1,0 +1,10 @@
+# Ne pas envoyer les modules Node
+frontend/node_modules/
+
+# Ne pas envoyer les certificats SSL privés (sécurité !)
+certs/selfsigned.key
+certs/dhparam.pem
+certs/selfsigned.crt
+
+# Fichiers système ou de build facultatifs
+.DS_Store

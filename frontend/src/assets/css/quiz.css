@@ -1,0 +1,334 @@
+/* Structure globale */
+body {
+  background-color: #ECF8FF; /* fond bleu très clair uniforme */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #1E1E1E;
+  height: auto;
+}
+
+.quiz-container {
+  padding: 30px 15px;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  width: 120px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* Progression */
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px auto 8px;
+  padding: 0 15px;
+  max-width: 800px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.progress-label {
+  color: #5A6472;
+  font-weight: 300;
+}
+
+.progress-percent {
+  color: #2563EB; /* bleu tech */
+}
+
+.progress-bar-container {
+  background-color: #E2E8F0;
+  height: 6px;
+  width: 100%;
+  margin: 0 auto 25px;
+  border-radius: 3px;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #2A67EC, #63A7FA);
+  height: 100%;
+  width: 0%;
+  border-radius: 3px;
+  transition: width 0.3s ease-in-out;
+}
+
+
+/* Carte de question */
+.question-card {
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 16px;
+  padding: 30px 25px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+.question-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #1F2937;
+}
+
+/* Likert scale */
+.likert-scale {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  text-align: center;
+
+}
+
+.left-label,
+.right-label {
+  min-width: 70px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1E1E1E;
+  width: 60px;
+  text-align: center;
+  user-select: none;
+}
+
+/* Label radio : conteneur des boutons radio uniquement */
+.radio-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Boutons radio de tailles différentes */
+.size-1 input[type="radio"] { width: 40px; height: 40px; border: 3px solid #2A67E9; }
+.size-2 input[type="radio"] { width: 32px; height: 32px; border: 2.5px solid #2A67E9; }
+.size-3 input[type="radio"] { width: 24px; height: 24px; border: 2px solid #A4A7A9; }
+.size-4 input[type="radio"] { width: 32px; height: 32px; border: 2.5px solid #61A4F7; }
+.size-5 input[type="radio"] { width: 40px; height: 40px; border: 3px solid #61A4F7; }
+
+
+/* Suppression apparence native */
+.likert-scale input[type="radio"] {
+  appearance: none;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.3s ease;
+  position: relative;
+  margin: 0; /* enlever marges inutiles */
+}
+
+/* Checked : fond et bordure de la même couleur que la bordure initiale */
+.size-1 input[type="radio"]:checked {
+  background-color: #2A67E9;
+  border-color: #2A67E9;
+}
+
+.size-2 input[type="radio"]:checked {
+  background-color: #2A67E9;
+  border-color: #2A67E9;
+}
+
+.size-3 input[type="radio"]:checked {
+  background-color: #A4A7A9;
+  border-color: #A4A7A9;
+}
+
+.size-4 input[type="radio"]:checked {
+  background-color: #61A4F7;
+  border-color: #61A4F7;
+}
+
+.size-5 input[type="radio"]:checked {
+  background-color: #61A4F7;
+  border-color: #61A4F7;
+}
+
+/* Hover : fond clair de la couleur bordure avec bordure plus foncée */
+.size-1 input[type="radio"]:not(:checked):hover {
+  background-color: #c2d1f9; /* clair bleu foncé */
+  border-color: #2A67E9;
+}
+
+.size-2 input[type="radio"]:not(:checked):hover {
+  background-color: #c2d1f9;
+  border-color: #2A67E9;
+}
+
+.size-3 input[type="radio"]:not(:checked):hover {
+  background-color: #d5d7d8; /* clair gris */
+  border-color: #A4A7A9;
+}
+
+.size-4 input[type="radio"]:not(:checked):hover {
+  background-color: #cce5fb; /* clair bleu clair */
+  border-color: #61A4F7;
+}
+
+.size-5 input[type="radio"]:not(:checked):hover {
+  background-color: #cce5fb;
+  border-color: #61A4F7;
+}
+
+
+
+/* Boutons de navigation en dehors de la carte */
+.quiz-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 30px auto 0;
+  max-width: 600px;
+}
+
+.quiz-buttons button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quiz-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quiz-buttons button:first-child {
+  background-color: transparent;
+  color: #3B82F6;
+  border: 2px solid #3B82F6;
+}
+
+.quiz-buttons button:first-child:hover:not(:disabled) {
+  background-color: #dde9fe; /* bleu foncé léger */
+  /* texte et border restent en #2563EB */
+  color: #3B82F6;
+  border-color: #3B82F6;
+}
+
+.quiz-buttons button:last-child {
+  background-color: #2563EB;
+  color: #FFFFFF;
+  border: none;
+}
+
+.quiz-buttons button:last-child:hover:not(:disabled) {
+  background-color: #3b82f6; /* un bleu un peu plus clair */
+}
+
+.quiz-buttons button:hover:not(:disabled) {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(37, 99, 235, 0.3); /* ombre bleutée */
+}
+
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 120px;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 12px;
+}
+
+.left-label,
+.right-label {
+  width: auto;
+  text-align: center;
+  flex: 1;
+}
+
+/* Plus d’espacement entre les boutons radio */
+.radio-group {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+
+/* Responsive : stack labels below the radio buttons on small screens */
+@media (max-width: 600px) {
+  .likert-scale {
+    flex-direction: column;
+  }
+
+  .radio-group {
+    order: 1;
+  }
+
+  .left-label,
+  .right-label {
+    order: 2;
+  }
+}
+
+.quiz-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30rem;
+  margin: 30px auto 0;
+  max-width: 600px;
+}
+
+.quiz-buttons button {
+  padding: 12px 24px;
+  min-width: 120px;            /* ✅ taille minimale pour la cohérence */
+  max-width: 150px;            /* ✅ limite la croissance en responsive */
+  flex-shrink: 0;              /* ✅ empêche de rapetisser */
+  flex-grow: 0;                /* ✅ empêche de grandir */
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* Bouton Précédent */
+.quiz-buttons button:first-child {
+  background: linear-gradient(to right, #60A5FA, #3B82F6);
+  color: #FFFFFF;
+}
+
+/* Bouton Suivant */
+.quiz-buttons button:last-child {
+  background: linear-gradient(to right, #3B82F6, #2563EB);
+  color: #FFFFFF;
+}
+
+/* Hover commun */
+.quiz-buttons button:hover:not(:disabled) {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Désactivé */
+.quiz-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive : gap réduit */
+@media (max-width: 600px) {
+  .quiz-buttons {
+    gap: 1.5rem;
+  }
+}
+

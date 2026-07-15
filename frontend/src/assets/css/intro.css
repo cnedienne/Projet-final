@@ -1,0 +1,106 @@
+/* index.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F9; /* fond clair moderne */
+    color: #1E1E1E; /* texte très lisible */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-Intro {
+    text-align: center;
+    padding: 30px 15px;  /* inchangé */
+    max-width: 720px;     /* inchangé */
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 48px;     /* inchangé */
+    margin: 0;
+}
+
+
+.subtitle {
+    margin-top: -6px;
+    font-weight: 300;
+    font-size: 20px;
+    color: #555; /* gris doux, bon contraste sur fond clair */
+}
+
+.intro-box {
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    background-color: #FFFFFF; /* boîte claire sur fond clair */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.intro-box h2 {
+    font-size: 1.25em;
+    color: #1E1E1E; /* même que body */
+    margin-bottom: 15px;
+}
+
+.intro-box p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    color: #555; /* pour un peu de douceur visuelle */
+}
+
+button {
+    background-color: #2563EB; /* bouton bleu tech */
+    border: none;
+    padding: 10px 20px;
+    color: #FFFFFF; /* texte blanc lisible */
+    font-weight: 600;
+    font-size: 0.9em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3399FF; /* effet hover plus clair */
+}
+
+
+/* Responsive mobile */
+@media screen and (max-width: 600px) {
+  body {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 10px;
+    align-items: stretch;
+  }
+
+  .container-Intro {
+    padding: 20px 10px;
+  }
+
+  .intro-box {
+    padding: 15px;
+  }
+
+  .intro-box h2 {
+    font-size: 1.1em;
+  }
+
+  .intro-box p {
+    font-size: 0.9em;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1em;
+    padding: 12px;
+  }
+
+  .logo {
+    width: 180px !important;
+  }
+}

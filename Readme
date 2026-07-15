@@ -1,0 +1,22 @@
+En lanceant le projet il faut executer chmod +x ./restart_project.sh .
+
+
+Il ne faut pas oublier de renommer le dossier ~ .
+
+
+Il faut ensuite importer la base de données nommée web_app et créer un utilisateur puis importer le fichier sql à cette base de donnée créée. 
+
+
+Et enfin lancer le script avec ./restart_project.sh .
+
+
+Vous accedez au site par http://localhost:5173/ 
+
+
+Pour acceder à la page Administrateur http://localhost:5173/login avec les identifiants: 
+
+nom d'utilisateur: rapidcode
+
+mot de passe: password
+
+

@@ -1,0 +1,139 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  position: relative;
+  color: #444;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #2F64E1;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #2F64E1;
+}
+
+.nav-link.active {
+  color: #2F64E1;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+header .logo {
+  height: 50px;
+  width: auto;
+}
+
+.test-button {
+  background: linear-gradient(to right, #2F64E1, #57A5FB);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  outline: 'none';
+}
+
+.test-button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+  outline: 'none';
+}
+
+
+/* Burger icon hidden by default */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.burger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* Mobile menu hidden by default */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1.5rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+
+/* Responsive rules */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .desktop-button {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  header {
+    padding: 1rem;
+    position: relative;
+  }
+}
